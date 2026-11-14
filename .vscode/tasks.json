@@ -1,0 +1,245 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Prepare portfolio workspace",
+			"type": "shell",
+			"command": "mkdir app public components 2>nul",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "make dirs",
+			"type": "shell",
+			"command": "mkdir app; mkdir public; mkdir components",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install dependencies",
+			"type": "shell",
+			"command": "cd /d \"C:\\Users\\Pure India Trust\\Documents\\portfolio\"; npm install --no-fund --no-audit",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check node",
+			"type": "shell",
+			"command": "cmd /c \"where node && where npm && node -v && npm -v\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check node 2",
+			"type": "shell",
+			"command": "cmd /c \"where node & where npm & node -v & npm -v\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check node 3",
+			"type": "shell",
+			"command": "where.exe node; where.exe npm; node -v; npm -v",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "locate node",
+			"type": "shell",
+			"command": "Get-ChildItem 'C:\\Program Files\\nodejs'; Get-ChildItem 'C:\\Program Files (x86)\\nodejs'; Get-ChildItem 'C:\\Users\\Pure India Trust\\AppData\\Local\\Programs\\nodejs'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install node via winget",
+			"type": "shell",
+			"command": "winget install --id OpenJS.NodeJS.LTS -e",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install node via winget 2",
+			"type": "shell",
+			"command": "winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify node npm",
+			"type": "shell",
+			"command": "node -v; npm -v",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "find node binary",
+			"type": "shell",
+			"command": "Get-ChildItem -Path 'C:\\' -Filter node.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 20 | Format-Table -AutoSize",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "find node in user profile",
+			"type": "shell",
+			"command": "Get-ChildItem -Path 'C:\\Users' -Recurse -Include node.exe -ErrorAction SilentlyContinue | Select-Object -First 20 | Format-Table -AutoSize",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "locate node with cmd",
+			"type": "shell",
+			"command": "cmd.exe /c 'dir \"C:\\Program Files\\nodejs\" && dir \"C:\\Program Files (x86)\\nodejs\" && dir \"C:\\Users\\Pure India Trust\\AppData\\Local\\Programs\\nodejs\"'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check node binary path",
+			"type": "shell",
+			"command": "& 'C:\\Windows\\System32\\cmd.exe' /c 'dir \"C:\\Program Files\\nodejs\"'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify node install",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' -v; & 'C:\\Program Files\\nodejs\\npm.cmd' -v",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install project deps",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\npm.cmd' install --no-fund --no-audit",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build portfolio",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\npm.cmd' run build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install dependencies fully",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\npm.cmd' install --no-fund --no-audit",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "clean install state",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; if (Test-Path 'node_modules') { Remove-Item -Recurse -Force 'node_modules' }; if (Test-Path '.next') { Remove-Item -Recurse -Force '.next' }; if (Test-Path 'package-lock.json') { Remove-Item -Force 'package-lock.json' }; & 'C:\\Program Files\\nodejs\\npm.cmd' install --no-fund --no-audit",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "run next build direct",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\next\\dist\\bin\\next' build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "lint portfolio",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\npm.cmd' run lint",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check python",
+			"type": "shell",
+			"command": "py -c \"print('ok')\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check python 2",
+			"type": "shell",
+			"command": "python -c \"print('ok')\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "create resume pdf",
+			"type": "shell",
+			"command": "python -c \"from pathlib import Path; import os; lines = [\\\"Kapildev K\\\", \\\"Software Engineer | Cloud Security | DevOps & SRE | Backend Engineering\\\", \\\"\\\", \\\"Contact\\\", \\\"Email: kapilkochi@gmail.com\\\", \\\"LinkedIn: linkedin.com/in/kapildev-k-69ab1a26b\\\", \\\"GitHub: github.com/kapildev-k\\\"]; content = '\\\\n'.join(lines); objs = []; objs.append('<< /Type /Catalog /Pages 2 0 R >>'); objs.append('<< /Type /Pages /Kids [3 0 R] /Count 1 >>'); objs.append('<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>'); stream = 'BT\\\\n/F1 20 Tf\\\\n72 720 Td\\\\n(Kapildev K) Tj\\\\n0 -28 Td\\\\n/F1 12 Tf\\\\n';\nfor line in lines[1:]:\n    stream += '(%s) Tj\\\\n0 -18 Td\\\\n' % line.replace('\\\\', '\\\\\\\\').replace('(', '\\\\(').replace(')', '\\\\)').replace('&', '\\\\&');\nstream += 'ET'; objs.append('<< /Length %d >>\\\\nstream\\\\n%s\\\\nendstream' % (len(stream.encode('latin-1')), stream)); objs.append('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'); offsets=[0]; pdf = bytearray(b'%PDF-1.4\\\\n'); for i, obj in enumerate(objs, start=1): offsets.append(len(pdf)); pdf += f'{i} 0 obj\\\\n{obj}\\\\nendobj\\\\n'.encode('latin-1'); xref_pos = len(pdf); pdf += f'xref\\\\n0 {len(objs)+1}\\\\n0000000000 65535 f \\\\n'.encode('latin-1'); for off in offsets[1:]: pdf += f'{off:010d} 00000 n \\\\n'.encode('latin-1'); pdf += f'trailer\\\\n<< /Size {len(objs)+1} /Root 1 0 R >>\\\\nstartxref\\\\n{xref_pos}\\\\n%%EOF'.encode('latin-1'); p = Path(r'C:\\Users\\Pure India Trust\\Documents\\portfolio\\public\\resume.pdf'); p.parent.mkdir(parents=True, exist_ok=True); p.write_bytes(pdf)\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "generate resume pdf",
+			"type": "shell",
+			"command": "python generate_resume.py",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build portfolio final",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\next\\dist\\bin\\next' build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "remove generated icon route",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; Remove-Item -Force 'app\\icon.tsx'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "validate final build",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\next\\dist\\bin\\next' build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "cleanup scratch files",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; Remove-Item -Force 'test.txt'; Remove-Item -Force 'generate_resume.py'",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final verification",
+			"type": "shell",
+			"command": "Set-Location 'C:\\Users\\Pure India Trust\\Documents\\portfolio'; & 'C:\\Program Files\\nodejs\\node.exe' '.\\node_modules\\next\\dist\\bin\\next' build",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
